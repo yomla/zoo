@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Animal } from '../animal/animal.component';
+import { Sector } from '../sector/sector.component';
 
 @Component({
 
@@ -10,17 +11,28 @@ import { Animal } from '../animal/animal.component';
 export class AnimalListComponent {
 
 	animals: any[];
-	newAnimal: Animal = new Animal('','','');
+	sectors: any[];
+	sector: Sector = new Sector('Unknown','Unknown');
+	newAnimal: Animal = new Animal('','','', this.sector);
 
 	constructor () {
 
-		this.animals= [   new Animal ('Dog', 'Ben', '21-12-2012'),
+		this.sectors = [  new Sector ('Water-animals', 'Water'),
 
-						  new Animal ('Cat', 'Cloe', '21-12-2012'),
+						  new Sector ('Fawl','Kages'),
 
-						  new Animal ('Fish', 'Nemo', '21-12-2012')	
+						  new Sector ('Predators', 'Kages')	
+
 					   ];
 
+		this.animals= [   new Animal ('Dog', 'Ben', '21-12-2012', this.sectors[0]),
+
+						  new Animal ('Cat', 'Cloe', '21-12-2012', this.sectors[1]),
+
+						  new Animal ('Fish', 'Nemo', '21-12-2012', this.sectors[2])	
+					   ];
+
+		
 
 		// this.animals = [
 		// 	{
@@ -73,7 +85,7 @@ export class AnimalListComponent {
 	addAnimal(animal) {
 
 		this.animals.push(animal);
-		this.newAnimal = new Animal('','','');
+		this.newAnimal = new Animal('','','', this.sector);
 
 	}
 }

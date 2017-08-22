@@ -22,7 +22,7 @@ export class AnimalListComponent {
 			{
 				kind: 'Cat',
 				name: 'Cloe',				
-				dateOfBirth: '05-05-2010'
+				dateOfBirth: ''
 			},
 
 			{

@@ -9,7 +9,8 @@ import { Animal } from '../animal/animal.component';
 
 export class AnimalListComponent {
 
-	private animals: any[];
+	animals: any[];
+	newAnimal: Animal = new Animal('','','');
 
 	constructor () {
 
@@ -69,4 +70,10 @@ export class AnimalListComponent {
 		this.animals.unshift(animal);
 	}
 
+	addAnimal(animal) {
+
+		this.animals.push(animal);
+		this.newAnimal = new Animal('','','');
+
+	}
 }

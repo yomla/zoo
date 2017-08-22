@@ -2,10 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { AnimalListComponent } from './animal-list/animals.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent, AnimalListComponent
   ],
   imports: [
     BrowserModule

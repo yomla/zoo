@@ -88,4 +88,18 @@ export class AnimalListComponent {
 		this.newAnimal = new Animal('','','', this.sector);
 
 	}
+
+	showAnimalsBySector(sector) {
+		
+		const list=[];	
+		
+		this.animals.forEach(function(animal){
+
+			if(animal.sector && animal.sector.name == sector.name) 
+				list.push(animal.name); 
+		});		
+
+
+		alert(list.toString());
+	}
 }

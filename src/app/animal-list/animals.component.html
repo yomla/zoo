@@ -32,4 +32,19 @@
 		<button (click)="remove(animal)">Remove</button>
 		<button (click)="moveToTop(animal)">Move to top</button>
 	</tr>
+</table><br>
+
+
+<table>
+	<thead>
+		<th>Sector  name</th>
+		<th>Surface</th>
+	</thead>
+	<tbody>
+		<tr *ngFor="let sector of sectors">
+			<td> {{ sector.name }}</td>
+			<td> {{ sector.surface }}</td>
+			<button (click)="showAnimalsBySector(sector)">View list</button>
+		</tr>
+	</tbody>
 </table>

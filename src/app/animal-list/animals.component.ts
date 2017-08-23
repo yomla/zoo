@@ -5,15 +5,16 @@ import { Sector } from '../sector/sector.component';
 @Component({
 
 	selector: 'app-animals',
-	templateUrl: './animals.component.html'
+	templateUrl: './animals.component.html',
+	styleUrls: ['./animals.component.css']
 })
 
 export class AnimalListComponent {
 
 	animals: any[];
 	sectors: any[];
-	sector: Sector = new Sector('Unknown','Unknown');
-	newAnimal: Animal = new Animal('','','', this.sector);
+	// sector: Sector = new Sector('','');
+	newAnimal: Animal = new Animal('','','', new Sector('',''));
 
 	constructor () {
 
@@ -85,7 +86,7 @@ export class AnimalListComponent {
 	addAnimal(animal) {
 
 		this.animals.push(animal);
-		this.newAnimal = new Animal('','','', this.sector);
+		this.newAnimal = new Animal('','','', this.sectors[0]);
 
 	}
 
